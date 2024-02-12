@@ -1,5 +1,6 @@
 ﻿using TARpe22MauiPlanets.Models;
 
+
 namespace TARpe22MauiPlanets.Services
 {
     internal static class PlanetsService
@@ -183,5 +184,15 @@ namespace TARpe22MauiPlanets.Services
             },
     };
 
+        public static List<Planet> GetFeaturedPlanets()
+        {
+            var random = new Random();
+            var randomizedPlanets = planets.OrderBy(item => random.Next());
+
+            return randomizedPlanets.Take(2).ToList();
+        }
+
+        public static List<Planet> GetAllPlanet()
+            => planets;
     }
 }
