@@ -139,9 +139,9 @@
                     Clicked="ExploreNow_Clicked"/>
 
             </VerticalStackLayout>
-            
+
         </Border>
 
     </Grid>
-    
+
 </ContentPage>

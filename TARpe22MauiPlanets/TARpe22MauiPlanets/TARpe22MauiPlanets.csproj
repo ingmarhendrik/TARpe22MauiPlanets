@@ -19,6 +19,7 @@
 		<ApplicationIdGuid>0dc32a08-ad09-45b3-8f93-640eb86e956a</ApplicationIdGuid>
 
 		<!-- Versions -->
+		<WindowsPackageType Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">None</WindowsPackageType>
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
 		<ApplicationVersion>1</ApplicationVersion>
 
@@ -49,6 +50,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <PackageReference Include="Microsoft.UI.Xaml" Version="2.8.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\PlanetDetailsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\PlanetsPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
